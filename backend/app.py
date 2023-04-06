@@ -12,7 +12,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Set up Firebase
-cred = credentials.Certificate("serviceAccountKey.json")
+#cred = credentials.Certificate("secrets/skill-place-market-swap-firebase-adminsdk-o8cig-bfac76d39e.json")
+
+cred = credentials.Certificate("/Users/jasonrobinson/Downloads/skill-place-market-swap-firebase-adminsdk-o8cig-bfac76d39e.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
 
