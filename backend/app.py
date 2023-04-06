@@ -1,5 +1,7 @@
 # backend/app.py
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+from secrets import token_urlsafe
 import firebase_admin
 from firebase_admin import credentials, firestore
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -7,6 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)
 
 # Set up Firebase
 cred = credentials.Certificate("serviceAccountKey.json")
